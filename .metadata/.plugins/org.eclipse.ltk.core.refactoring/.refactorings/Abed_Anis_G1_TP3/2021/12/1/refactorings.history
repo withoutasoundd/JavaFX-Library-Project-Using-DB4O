@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Abed_Anis_G1_TP3/src/application/Main_Screen_Controller.fxml&apos; to &apos;Main_Screen.fxml&apos;" description="Rename resource &apos;Main_Screen_Controller.fxml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/application/Main_Screen_Controller.fxml" name="Main_Screen.fxml" stamp="1640882576361" updateReferences="true"/>
+</session>

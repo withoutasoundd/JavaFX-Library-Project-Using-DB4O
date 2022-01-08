@@ -1,0 +1,7 @@
+module Abed_Anis_G1_TP3 {
+	requires javafx.controls;
+	requires db4o;
+	requires javafx.fxml;
+	
+	opens application to javafx.graphics, javafx.fxml;
+}

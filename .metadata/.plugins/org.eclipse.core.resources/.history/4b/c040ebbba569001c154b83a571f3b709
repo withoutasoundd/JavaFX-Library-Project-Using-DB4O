@@ -1,0 +1,137 @@
+package application;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+public class Ajouter_Livre_Controller implements Initializable{
+	static ObjectContainer db;
+	
+	@FXML ImageView back; @FXML Button add; @FXML TextField id; @FXML TextField titre; @FXML TextField ISBN; @FXML TextField auteur;
+	 @FXML TextField editeur; @FXML TextField annee; @FXML TextField domaine; @FXML TextField mot_cle; @FXML Label added;
+
+	 public void back() throws IOException {
+			Parent root = FXMLLoader.load(getClass().getResource("Main_Screen.fxml"));
+			Stage window = (Stage) back.getScene().getWindow();
+			window.setScene(new Scene(root, 1100, 650));
+	 }
+	 
+	 
+	 public void add() {
+		 
+		 if (!id.getText().isEmpty()&&!titre.getText().isEmpty()&&!ISBN.getText().isEmpty()&&!auteur.getText().isEmpty()
+				 &&!editeur.getText().isEmpty()&&!annee.getText().isEmpty()&&!domaine.getText().isEmpty()&&!mot_cle.getText().isEmpty()) {
+			 String path = System.getProperty("user.home")+"/bibliotheque.db4o";
+				
+				db = Db4oEmbedded.openFile(Db4oEmbedded
+						.newConfiguration(), path);
+			try {
+				 String idd = id.getText().toString();
+				 String titree = titre.getText().toString();
+				 String ISBNN = ISBN.getText().toString();
+				 String auteurr = auteur.getText().toString();
+				 String editeurr = editeur.getText().toString();
+				 String anneee = annee.getText().toString();
+				 String domainee = domaine.getText().toString();
+				 String mot_cles = mot_cle.getText().toString();
+				 
+				 Livre au = new Livre(idd,titree,ISBNN,anneee,domainee,mot_cles);
+				 
+				 boolean a = false;
+				 List <Auteur> e = db.query(Auteur.class);
+				 for(int i=0; i<e.size();i++) {
+						if (e.get(i).getNom().equals(auteurr)) {
+							au.setAuteur(e.get(i));
+							a = true;
+						}
+					}
+				 boolean ed = false;
+				 List <Editeur> r = db.query(Editeur.class);
+				 for(int i=0; i<r.size();i++) {
+						if (r.get(i).getM_e().equals(editeurr)) {
+							 au.setEditeur(r.get(i));
+							ed = true;
+						}
+					} 
+				 if (a==true&&ed==true) {
+					 db.store(au);
+					 id.clear(); id.clear(); titre.clear(); ISBN.clear(); auteur.clear(); editeur.clear(); annee.clear();
+					 domaine.clear(); mot_cle.clear(); added.setText("");
+					 added.setStyle("-fx-text-fill: green;");
+					 added.setText("Ajouté avec Succées");
+				 }
+				 else if (a==true&&ed==false) {
+					 added.setStyle("-fx-text-fill: red;");
+					 added.setText("Editeur inexistant");
+				 }
+				 else if (a==false&&ed==true) {
+					 added.setStyle("-fx-text-fill: red;");
+					 added.setText("Auteur inexistant");
+				 }
+				 else if (a==false&&ed==false) {
+					 added.setStyle("-fx-text-fill: red;");
+					 added.setText("Auteur et Editeur inexistants");
+				 }
+				 
+			}
+			 finally {
+				 db.close();
+			 }
+		 }
+
+		 else {
+			 added.setStyle("-fx-text-fill: red;");
+			 added.setText("Veuillez remplir tous les champs !");
+		 }
+	 //}
+}
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		 String path = System.getProperty("user.home")+"/bibliotheque.db4o";
+			
+			db = Db4oEmbedded.openFile(Db4oEmbedded
+					.newConfiguration(), path);
+		try {
+		List <Auteur> e = db.query(Auteur.class);
+		if(e.size()==0) {
+			auteur.setPromptText("Aucun auteur trouvé, veuillez en ajouter");
+		}
+		else {
+		String authors = "Auteurs enregistrés : [";
+		for(int i=0; i<e.size();i++) {
+					authors+=" "+e.get(i).getNom()+",";}
+		authors+="]";
+		auteur.setPromptText(authors);}
+		
+		List <Editeur> ed = db.query(Editeur.class);
+		if(ed.size()==0) {
+			editors.setPromptText("Aucun editeur trouvé, veuillez en ajouter");
+		}
+		else {
+		String editors = "Editeurs enregistrés : [";
+		for(int i=0; i<e.size();i++) {
+		editors+=" "+ed.get(i).getM_e()+",";}
+		editors+="]";
+		editeur.setPromptText(editors);
+	}}
+		finally {
+			db.close();}}
+		}

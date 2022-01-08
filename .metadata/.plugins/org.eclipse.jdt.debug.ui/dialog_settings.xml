@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=TP3-BDA/\/home\/withoutasound\/Desktop\/db4o-8.0\/lib\/db4o-8.0.249.16098-all-java5.jar&amp;lt;EDU.purdue.cs.bloat.benchmark(Benchmark.class[Benchmark&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=final/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=tesf/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Hihi/src&amp;lt;classe{Ayit.java[Ayit&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Hihi/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=wlh/\/home\/withoutasound\/Desktop\/javafx-sdk-17.0.1\/lib\/javafx.graphics.jar&amp;lt;com.sun.javafx.css.parser(Css2Bin.class[Css2Bin&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=wlh/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=tet/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Abed_Anis_TP3/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Test/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Anis/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Anis_Abed_TP3/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=anis/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Abed_Anis_G1_TP3/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=Abed_Anis_G1_TP3_Linux/src&amp;lt;application{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="386"/>
+			<item key="DIALOG_Y_ORIGIN" value="47"/>
+			<item key="DIALOG_FONT_NAME" value="1|Fira Sans|10.0|0|GTK|1|"/>
+		</section>
+	</section>
+</section>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;SplashController.java&apos; to &apos;ee/src/application&apos;&#x0A;- Original project: &apos;bf645f2e2683ba8f71f4255553c7735b-9621d933e8e96f5d07a8b920c04886776bf5a659&apos;&#x0A;- Destination element: &apos;ee/src/application&apos;&#x0A;- Original element: &apos;SplashController.java&apos;&#x0A;- Update references to refactored element" description="Move file" destination="=ee/src&lt;application" element1="SplashController.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1640638271708" units="0" version="1.0"/>
+</session>
